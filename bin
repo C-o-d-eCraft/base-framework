@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+use Craft\Components\DIContainer\DIContainer;
+use Craft\Components\ErrorHandler\CliErrorHandler;
+use Craft\Contracts\ConsoleKernelInterface;
+use Craft\Contracts\DataBaseConnectionInterface;
+use Craft\Contracts\EventDispatcherInterface;
+use Craft\Contracts\InputInterface;
+use Craft\Contracts\LoggerInterface;
+use Craft\Contracts\OutputInterface;
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+const PROJECT_ROOT = __DIR__ . '/';
+const PROJECT_SOURCE_ROOT = __DIR__ . '/src/';
+
+require_once PROJECT_ROOT . 'vendor/autoload.php';
+
+$container = DIContainer::createContainer(require_once PROJECT_ROOT . 'config/di-container.php');
+
+$container->singleton(EventDispatcherInterface::class);
+$container->singleton(DataBaseConnectionInterface::class);
+$container->singleton(InputInterface::class);
+$container->singleton(OutputInterface::class);
+$container->singleton(LoggerInterface::class);
+$container->singleton(CliErrorHandler::class);
+$container->singleton(ConsoleKernelInterface::class);
+
+$kernel = $container->make(ConsoleKernelInterface::class);
+
+$kernel->registerCommandNamespaces([
+    
+]);
+
+$status = $kernel->handle();
+
+$kernel->terminate($status);
