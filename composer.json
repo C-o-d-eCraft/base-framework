@@ -3,7 +3,7 @@
   "description": "Базовый фреймворк, предоставляющий возможность быстрой реализации веб-приложений",
   "license": "MIT",
   "minimum-stability": "stable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [
     {
       "name": "Andrey Bogachevskiy",
@@ -17,7 +17,7 @@
     },
     {
       "name": "Nikita Shmorgun",
-      "homepage": "https://github.com/suvor03",
+      "homepage": "https://github.com/Nedelaet",
       "role": "Developer"
     }
   ],
