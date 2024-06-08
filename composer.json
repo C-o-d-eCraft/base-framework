@@ -1,0 +1,39 @@
+{
+  "name": "c-o-d-e-craft/base-framework",
+  "description": "Базовый фреймворк, предоставляющий возможность быстрой реализации веб-приложений",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Andrey Bogachevskiy",
+      "homepage": "https://github.com/bogachevskes",
+      "role": "Owner"
+    },
+    {
+      "name": "Dmitriy Suvorov",
+      "homepage": "https://github.com/suvor03",
+      "role": "Developer"
+    },
+    {
+      "name": "Nikita Shmorgun",
+      "homepage": "https://github.com/suvor03",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "robmorgan/phinx": "^0.15.5",
+    "symfony/yaml": "^7.0",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "bFrame\\": "src/"
+    }
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^7.0",
+    "c-o-d-e-craft/framework": "*"
+  }
+}
